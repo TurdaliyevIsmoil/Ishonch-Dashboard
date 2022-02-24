@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="rgb(8, 214, 101)">
+    <title>Dashboard</title>
+    <link rel="icon" href="https://img.icons8.com/wired/64/ffffff/manager.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+        integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+    <!-- MAIN  CONTAINER -->
+    <div class="container-fluid main-wrapper">
+        <div class="row m-0 p-0 border">
+
+            <!-- SIDEBAR menu GLOBAL -->
+            <div class="menu-space" id="menu-space"></div>
+            <div class="menu" id="menu-inner">
+                <div class="logo"><a href=""><i class="fas fa-chart-line"></i><span>HRMS</span> </a>
+                </div>
+                <menu>
+                    <div class="pages" id="pages"></div>
+                    <li><a href="index.html" title="Statistika"><i class="fas fa-home"></i> Statistika</a></li>
+                    <li><a href="tables.html" title="Bo'limlar"><i class="far fa-calendar-alt"></i> Bo'limlar</a></li>
+                    <li><a href="users.html" title="Foydalanuvchilar"><i class="fas fa-user-friends"></i>
+                            Foydalanuvchilar</a></li>
+                    <li><a href="branches.html" title="Filiallar"><i class="fas fa-code-branch"></i> Filiallar</a></li>
+                    <li><a href="canditates.html" title="Nomzodlar"><i class="fas fa-user-plus"></i> Nomzodlar</a></li>
+                    <li><a href="transfers.html" title="O'tkazmalar"><i class="fas fa-exchange-alt"></i> O'tkazmalar</a>
+                    </li>
+                    <li><a href="applications.html" title="Arizalar"><i class="far fa-list-alt"></i> Arizalar</a></li>
+                    <li class="selected-menu"><a href="vacancies.html" title="Bo'sh ish o'rinlar"><i class="fas fa-user-tag"></i> Bo'sh ish
+                            o'rinlar</a>
+                    </li>
+                </menu>
+            </div>
+
+            <!-- COntants -->
+            <div class="col content">
+
+                <!-- Top user menu GLOBAL -->
+                <div class="top-menu">
+                    <div class="toggle"><i id="toggle-menu" class="fas fa-align-left"></i></div>
+                    <div class="setting">
+                        <div class="dropdown">
+                            <button class="btn btn-language dropdown-toggle shadow-none" type="button"
+                                id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-globe-africa"></i> Til tanlash
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item" href="#"><img src="assets/img/uz.png" alt=""> Uz</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/img/ru.png" alt=""> Ru</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/img/eng.png" alt=""> Eng</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-profile dropdown-toggle shadow-none" type="button"
+                                id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle"></i> Ismoil Turdaliyev
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i> Mening
+                                        profilim</a></li>
+                                <li>
+                                    <hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Chiqish</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section informations -->
+                <div class="tables  branches">
+                    <div class="title mb-2">
+                        <span>  Bo'sh ish o'rinlari  </span>
+                        <div class="form-group">
+                            <div class="selects d-flex">
+                                <div class="form-group">
+                                    <select class="form-control category-select" name="" id="">
+                                        <option value="">Hammasi</option><option value="1">
+                                            Filial boshqaruvchisi
+                                          </option><option value="2">
+                                            Boshqaruvchi o‘rinbosari (Front ofis)
+                                          </option><option value="3">
+                                            Boshqaruvchi o‘rinbosari (bek ofis)
+                                          </option><option value="4">
+                                            Filial boshqaruvchi o‘rinbosari
+                                          </option><option value="5">
+                                            Yurist
+                                          </option><option value="6">
+                                            Assistent
+                                          </option><option value="7">
+                                            Taklif va shikoyatlar bilan ishlash mutaxassisi
+                                          </option><option value="8">
+                                            Arxivarius
+                                          </option><option value="9">
+                                            HR, Taklif va shikoyatlar bilan ishlash mutaxassisi, Arxivarius
+                                          </option><option value="10">
+                                            Savdo bo‘limi boshlig‘i
+                                          </option><option value="11">
+                                            Savdo bo‘limi boshlig‘i (Boshqaruvchi o‘rinbosari)
+                                          </option><option value="12">
+                                            Shartnoma rasmiylashtirish bo‘limi bosh mutaxassisi
+                                          </option><option value="13">
+                                            Shartnoma rasmiylashtirish bo‘limi yetakchi mutaxassisi
+                                          </option><option value="14">
+                                            Shartnoma rasmiylashtirish bo‘limi mutaxassisi
+                                          </option><option value="15">
+                                            Supervayzer
+                                          </option><option value="16">
+                                            Bosh sotuvchi-maslaxatchi
+                                          </option><option value="17">
+                                            Yetakchi sotuvchi-maslaxatchi
+                                          </option><option value="18">
+                                            Sotuvchi-maslaxatchi
+                                          </option><option value="19">
+                                            Choy tarqatuvchi
+                                          </option><option value="20">
+                                            Xostes
+                            
+                            
+                                          </option><option value="21">
+                                            Bosh kassir
+                                          </option><option value="22">
+                                            Bosh kassir yordamchisi
+                                          </option><option value="23">
+                                            Kassir
+                                          </option><option value="24">
+                                            Merchendayzing bo‘lim boshlig‘i
+                                          </option><option value="25">
+                                            Bosh merchendayzer
+                                          </option><option value="26">
+                                            Merchandayzer
+                                          </option><option value="27">
+                                            Tovar teruvchi
+                                          </option><option value="28">
+                                            Tovarlar bilan ishlash bo‘limi boshlig‘i
+                                          </option><option value="29">
+                                            Ombor sektori mudiri
+                                          </option><option value="30">
+                                            Ombor sektori bosh mutaxassisi
+                                          </option><option value="31">
+                                            Ombor sektori yetakchi mutaxassisi
+                                          </option><option value="32">
+                                            Ombor sektori mutaxassisi
+                                          </option><option value="33">
+                                            Tovar berish sektor mudiri
+                                          </option><option value="34">
+                                            Tovar berish sektori yetakchi mutaxassisi
+                                          </option><option value="35">
+                                            Tovar tekshirib berish mutaxassisi
+                                          </option><option value="36">
+                                            Bonus tanlab beruvchi mutaxassis
+                                          </option><option value="37">
+                                            Yetkazish va o‘rnatish sektori mudiri
+                                          </option><option value="38">
+                                            Xaydovchi kurer
+                                          </option><option value="39">
+                                            Kuryer
+                                          </option><option value="40">
+                                            Servis xizmati bo‘yicha mutaxassis
+                                          </option><option value="41">
+                                            Ombor, yetkazish va o‘rnatish sektori mudiri
+                                          </option><option value="42">
+                                            Tovarlar bilan ishlash bo‘limi boshlig‘i (Merchandayzer)
+                                          </option><option value="43">
+                                            Qarzdorlikni undirish bo‘limi boshlig‘i
+                                          </option><option value="44">
+                                            Qarzdorlikni undirish bo‘limi boshlig‘i (Boshqaruvchi o‘rinbosari)
+                                          </option><option value="45">
+                                            Qarzdorlikni undirish bo‘limi bosh mutaxassisi
+                                          </option><option value="46">
+                                            Qarzdorlikni undirish bo‘limi yetakchi mutaxassisi
+                                          </option><option value="47">
+                                            Qarzdorlikni undirish bo‘limi mutaxassisi
+                                          </option><option value="48">
+                                            Reklama bo‘limi boshlig‘i
+                                          </option><option value="49">
+                                            Reklama bo‘limi bosh mutaxassisi
+                                          </option><option value="50">
+                                            Reklama bo‘limi mutaxassisi
+                                          </option><option value="51">
+                                            Qayta savdoga jalb qilish operatori
+                                          </option><option value="52">
+                                            Yangi mijoz jalb qilish operatori
+                                          </option><option value="53">
+                                            Qayta savdoga va yangi mijoz jalb qilish operatori
+                                          </option><option value="54">
+                                            Bolalar maydonchasi nazoratchisi
+                                          </option><option value="55">
+                                            Kamunal xizmatlar bo‘yicha mutaxassis
+                                          </option><option value="56">
+                                            Boshqa qorovul
+                                          </option><option value="57">
+                                            Qorovul
+                                          </option><option value="58">
+                                            Oshxona ishchisi
+                                          </option><option value="59">
+                                            Oshxona ishchisi yordamchisi
+                                          </option><option value="60">
+                                            Xudud tozalovchi
+                                          </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control category-select" name="" id="">
+                                        <option value="">Hammasi</option><option value="1">
+                                            Yaratildi
+                                          </option><option value="2">
+                                            Qabul qilinmoqda
+                                         <option value="4">
+                                            Bekor qilingan
+                                          </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control category-select" name="" id="">
+                                        <option value="">Hammasi</option><option value="1">
+                                            Marhamat
+                                          </option><option value="2">
+                                            Buxoro
+                                          </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control category-select" name="" id="">
+                                        <option value="">Hammasi</option><option value="1">
+                                            Qoraqalpog‘iston Respublikasi
+                                          </option><option value="2">
+                                            Andijon viloyati
+                                          </option><option value="3">
+                                            Buxoro viloyati
+                                          </option><option value="4">
+                                            Jizzax viloyati
+                                          </option><option value="5">
+                                            Qashqadaryo viloyati
+                                          </option><option value="6">
+                                            Navoiy viloyati
+                                          </option><option value="7">
+                                            Namangan viloyati
+                                          </option><option value="8">
+                                            Samarqand viloyati
+                                          </option><option value="9">
+                                            Surxandaryo viloyati
+                                          </option><option value="10">
+                                            Sirdaryo viloyati
+                                          </option><option value="11">
+                                            Toshkent viloyati
+                                          </option><option value="12">
+                                            Farg‘ona viloyati
+                                          </option><option value="13">
+                                            Xorazm viloyati
+                                          </option><option value="14">
+                                            Toshkent shahri
+                                          </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="block">
+                        <div class="table-scroll">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nomlanishi</th>
+                                        <th scope="col">Viloyat</th>
+                                        <th scope="col">Tuman</th>
+                                        <th scope="col">Magazin kategoriyasi</th>
+                                        <th scope="col">To'ldirilgan sana</th>
+                                        <th scope="col">Amallar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>
+                                            Marhamat <br>
+                                        </td>
+                                        <td>Andijon</td>
+                                        <td>Marhamat</td>
+                                        <td>
+                                            <button class="a category">a</button>
+                                        </td>
+                                        <td>2021-02-09</td>
+
+                                        <td>
+                                            <a class="edit" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                                                    class="far fa-edit"></i></a>
+                                            <a class="watch" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i
+                                                    class="far fa-eye"></i></a>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>
+                                            Patabod <br>
+                                        </td>
+                                        <td>Andijon</td>
+                                        <td>Pahtabod</td>
+                                        <td>
+                                            <button class="b category">b</button>
+                                        </td>
+                                        <td>2021-02-09</td>
+
+                                        <td>
+                                            <a class="edit" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                                                    class="far fa-edit"></i></a>
+                                            <a class="watch" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i
+                                                    class="far fa-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>
+                                            Chorsu <br>
+                                        </td>
+                                        <td>Namangan</td>
+                                        <td>Chorsu</td>
+                                        <td>
+                                            <button class="c category">C</button>
+                                        </td>
+                                        <td>2021-02-09</td>
+
+                                        <td>
+                                            <a class="edit" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                                                    class="far fa-edit"></i></a>
+                                            <a class="watch" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i
+                                                    class="far fa-eye"></i></a>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>
+                                            Marhamat <br>
+                                        </td>
+                                        <td>Andijon</td>
+                                        <td>Marhamat</td>
+                                        <td>
+                                            <button class="d category">D</button>
+                                        </td>
+                                        <td>2021-02-09</td>
+
+                                        <td>
+                                            <a class="edit" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                                                    class="far fa-edit"></i></a>
+                                            <a class="watch" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i
+                                                    class="far fa-eye"></i></a>
+                                           
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <span class="pagination">
+                            <label class="pagenation-down" for="select-page">Items per page: </label>
+                            <select name="" class="table-page" id="select-page">
+                                <option value="">10</option>
+                                <option value="">15</option>
+                                <option value="">20</option>
+                            </select>
+                            <span class="result">1-10 of 20</span>
+                            <span class="arrows">
+                                <i class="fas fa-angle-left"></i>
+                                <i class="fas fa-angle-right"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal edit-modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form action="" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Taxrirlash
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="talablar">Talablar</label>
+                                <input type="text" name="" id="talablar" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Oylik maosh</label>
+                                <input type="text" name="" id="address" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="soni">Soni</label><br>
+                                <input type="number" class="form-control" name="" id="soni">
+                            </div>
+                            <div class="form-group">
+                                <label for="filial">Filial</label><br>
+                                <input type="text" name="" class="form-control" id="filial">
+                            </div>
+                           
+
+                        </div>
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="bio">Tavsif</label>
+                                <input type="text" name="" id="bio" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bonus">Bonus</label>
+                                <input type="text" name="" id="bonus" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Lavozim">Lavozim</label><br>
+                                <input type="text" class="form-control" name="" id="Lavozim">
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Filial</label><br>
+                                <select name="" id="status"> 
+                                    <option value="">Hammasi</option>
+                                    <option value="">Yaratildi</option>
+                                    <option value="">Qabul qilinmoqda</option>
+                                    <option value="">Bekor qilinmoqda</option>
+                                </select>
+                            </div>
+                           
+
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-modal-add">Yangilash</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    
+
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ma'lumotlar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row"><div class="pr-2 col-lg-6"><section class="widget"><!----><!----><!----><!----><div class="widgetBody widget-body "><div class="pb-3"><label class="font-weight-bold">Filial nomi
+                        :</label><h6>
+                        Marhamat
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Viloyat nomi :</label><h6>
+                        Andijon viloyati
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Tuman nomi :</label><h6>
+                        Marhamat tumani
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Buyurtma beruvchi nomi :</label><h6 class="d-flex">
+                        Abduqodir
+                        Abduraximov
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Lavozimi :</label><h6>
+                        Kassir
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Mentor(biriktirilgan hodim) :</label><h6>
+                        Aliquam dolor voluptas.
+                      </h6></div></div></section></div><div class="pl-2 col-lg-6"><section class="widget"><!----><!----><!----><!----><div class="widgetBody widget-body "><div class="pb-3"><label class="font-weight-bold">Oylik maoshi :</label><h6>
+                        Voluptate eaque quasi nesciunt deserunt cum ratione aut et.
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Bonus :</label><h6>
+                        Rem perspiciatis quo sint ad repellat autem ut.
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Talablar
+                        :</label><h6>
+                        Repudiandae praesentium voluptatum et eius consequatur aliquid architecto.
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Tavsif
+                        :</label><h6>
+                        Sed quod suscipit sunt recusandae.
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Soni :</label><h6>
+                        1
+                      </h6></div><div class="pb-3"><label class="font-weight-bold">Status
+                        :</label><h6>
+                        Qabul qilinmoqda
+                      </h6></div></div></section></div></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

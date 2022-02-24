@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="rgb(8, 214, 101)">
+    <title>Dashboard</title>
+    <link rel="icon" href="https://img.icons8.com/wired/64/ffffff/manager.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+        integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Main  Container -->
+    <div class="container-fluid main-wrapper">
+
+        <div class="row m-0 p-0 border">
+            <!-- Sidebar menu codes GLOBAL -->
+            <div class="menu-space" id="menu-space"></div>
+            <div class="menu" id="menu-inner">
+                <div class="logo"><a href=""><i class="fas fa-chart-line"></i><span>HRMS</span> </a>
+                </div>
+                <menu>
+                    <div class="pages" id="pages"></div>
+                    <li><a href="index.html" title="Statistika"><i class="fas fa-home"></i> Statistika</a></li>
+                    <li><a href="tables.html" title="Bo'limlar"><i class="far fa-calendar-alt"></i> Bo'limlar</a></li>
+                    <li><a href="users.html" title="Foydalanuvchilar"><i class="fas fa-user-friends"></i>
+                            Foydalanuvchilar</a></li>
+                    <li class="selected-menu"><a href="branches.html" title="Filiallar"><i class="fas fa-code-branch"></i> Filiallar</a></li>
+                    <li><a href="canditates.html" title="Nomzodlar"><i class="fas fa-user-plus"></i> Nomzodlar</a></li>
+                    <li><a href="transfers.html" title="O'tkazmalar"><i class="fas fa-exchange-alt"></i> O'tkazmalar</a>
+                    </li>
+                    <li><a href="applications.html" title="Arizalar"><i class="far fa-list-alt"></i> Arizalar</a></li>
+                    <li><a href="vacancies.html" title="Bo'sh ish o'rinlar"><i class="fas fa-user-tag"></i> Bo'sh ish
+                            o'rinlar</a>
+                    </li>
+                </menu>
+            </div>
+
+            <!-- Contents -->
+            <div class="col content">
+
+                <!-- Top user MENU GLOBAL -->
+                <div class="top-menu">
+                    <div class="toggle"><i id="toggle-menu" class="fas fa-align-left"></i></div>
+                    <div class="setting">
+                        <div class="dropdown">
+                            <button class="btn btn-language dropdown-toggle shadow-none" type="button"
+                                id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-globe-africa"></i> Til tanlash
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item" href="#"><img src="assets/img/uz.png" alt=""> Uz</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/img/ru.png" alt=""> Ru</a></li>
+                                <li><a class="dropdown-item" href="#"><img src="assets/img/eng.png" alt=""> Eng</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-profile dropdown-toggle shadow-none" type="button"
+                                id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle"></i> Ismoil Turdaliyev
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i> Mening
+                                        profilim</a></li>
+                                <li>
+                                    <hr>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Chiqish</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section Informations -->
+                <div class="tables  branches">
+
+                    <!-- Table Settings -->
+                    <div class="title mb-2">
+                        <span> Filiallar </span>
+                        <div class="form-group">
+                            <div class="selects d-flex">
+                                <div class="form-group">
+                                    <select class="form-control category-select" name="" id="">
+                                        <option selected>Hammasi</option>
+                                        <option>A</option>
+                                        <option>B</option>
+                                        <option>C</option>
+                                        <option>D</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control category-select" name="" id="">
+                                        <option value="">Hammasi</option>
+                                        <option value="1">
+                                            Qoraqalpog‘iston Respublikasi
+                                        </option>
+                                        <option value="2">
+                                            Andijon viloyati
+                                        </option>
+                                        <option value="3">
+                                            Buxoro viloyati
+                                        </option>
+                                        <option value="4">
+                                            Jizzax viloyati
+                                        </option>
+                                        <option value="5">
+                                            Qashqadaryo viloyati
+                                        </option>
+                                        <option value="6">
+                                            Navoiy viloyati
+                                        </option>
+                                        <option value="7">
+                                            Namangan viloyati
+                                        </option>
+                                        <option value="8">
+                                            Samarqand viloyati
+                                        </option>
+                                        <option value="9">
+                                            Surxandaryo viloyati
+                                        </option>
+                                        <option value="10">
+                                            Sirdaryo viloyati
+                                        </option>
+                                        <option value="11">
+                                            Toshkent viloyati
+                                        </option>
+                                        <option value="12">
+                                            Farg‘ona viloyati
+                                        </option>
+                                        <option value="13">
+                                            Xorazm viloyati
+                                        </option>
+                                        <option value="14">
+                                            Toshkent shahri
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control category-select" name="" id="">
+                                        <option value="">Hammasi</option>
+                                        <option value="198">
+                                            Bektimer tumani
+                                        </option>
+                                        <option value="199">
+                                            Mirzo Ulug'bek tumani
+                                        </option>
+                                        <option value="200">
+                                            Mirobod tumani
+                                        </option>
+                                        <option value="201">
+                                            Olmazor tumani
+                                        </option>
+                                        <option value="202">
+                                            Sirg'ali tumani
+                                        </option>
+                                        <option value="203">
+                                            Uchtepa tumani
+                                        </option>
+                                        <option value="204">
+                                            Yashnobod tumani
+                                        </option>
+                                        <option value="205">
+                                            Chilonzor tumani
+                                        </option>
+                                        <option value="206">
+                                            Shayxontohur tumani
+                                        </option>
+                                        <option value="207">
+                                            Yunusobod tumani
+                                        </option>
+                                        <option value="208">
+                                            Yakkasaroy tumani
+                                        </option>
+                                        <option value="218">
+                                            Yangihayot tumani
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="search-block">
+                                <label class="search-label" for="search"><i class="fas fa-search"></i></label>
+                                <input type="text" name="" id="search" class="form-control  shadow-none"
+                                    placeholder="Qidiruv..." aria-describedby="helpId">
+                                <button type="button" class="btn btn-add" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    <i class="fas fa-plus-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Table -->
+                    <div class="block">
+                        <div class="table-scroll">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nomlanishi</th>
+                                        <th scope="col">Viloyat</th>
+                                        <th scope="col">Tuman</th>
+                                        <th scope="col">Magazin kategoriyasi</th>
+                                        <th scope="col">To'ldirilgan sana</th>
+                                        <th scope="col">Amallar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>
+                                            Marhamat <br>
+                                        </td>
+                                        <td>Andijon</td>
+                                        <td>Marhamat</td>
+                                        <td>
+                                            <button class="a category">a</button>
+                                        </td>
+                                        <td>2021-02-09</td>
+
+                                        <td>
+                                            <a class="edit" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                                                    class="far fa-edit"></i></a>
+                                            <a class="watch" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i
+                                                    class="far fa-eye"></i></a>
+                                            <button class="delete-button"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>
+                                            Patabod <br>
+                                        </td>
+                                        <td>Andijon</td>
+                                        <td>Pahtabod</td>
+                                        <td>
+                                            <button class="b category">b</button>
+                                        </td>
+                                        <td>2021-02-09</td>
+
+                                        <td>
+                                            <a class="edit" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                                                    class="far fa-edit"></i></a>
+                                            <a class="watch" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i
+                                                    class="far fa-eye"></i></a>
+                                            <button class="delete-button"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>
+                                            Chorsu <br>
+                                        </td>
+                                        <td>Namangan</td>
+                                        <td>Chorsu</td>
+                                        <td>
+                                            <button class="c category">C</button>
+                                        </td>
+                                        <td>2021-02-09</td>
+
+                                        <td>
+                                            <a class="edit" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                                                    class="far fa-edit"></i></a>
+                                            <a class="watch" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i
+                                                    class="far fa-eye"></i></a>
+                                            <button class="delete-button"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>
+                                            Marhamat <br>
+                                        </td>
+                                        <td>Andijon</td>
+                                        <td>Marhamat</td>
+                                        <td>
+                                            <button class="d category">D</button>
+                                        </td>
+                                        <td>2021-02-09</td>
+
+                                        <td>
+                                            <a class="edit" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                                                    class="far fa-edit"></i></a>
+                                            <a class="watch" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i
+                                                    class="far fa-eye"></i></a>
+                                            <button class="delete-button"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <span class="pagination">
+                            <label class="pagenation-down" for="select-page">Items per page: </label>
+                            <select name="" class="table-page" id="select-page">
+                                <option value="">10</option>
+                                <option value="">15</option>
+                                <option value="">20</option>
+                            </select>
+                            <span class="result">1-10 of 20</span>
+                            <span class="arrows">
+                                <i class="fas fa-angle-left"></i>
+                                <i class="fas fa-angle-right"></i>
+                            </span>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modals -->
+
+
+    <div class="modal edit-modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <form action="" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Filial qo'shish
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="nameuz">Nomi(o'zbekcha)</label>
+                                <input type="text" name="" id="nameuz" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Manzil</label>
+                                <input type="text" name="" id="address" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category-model">Kategoriya</label><br>
+                                <select name="" id="category-model">
+                                    <option value="">A</option>
+                                    <option value="">B</option>
+                                    <option value="">C</option>
+                                    <option value="">D</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="region">Tuman</label><br>
+                                <select name="" id="region">
+                                    <option value="15">
+                                        Amudaryo tumani
+                                    </option>
+                                    <option value="16">
+                                        Beruniy tumani
+                                    </option>
+                                    <option value="17">
+                                        Kegayli tumani
+                                    </option>
+                                    <option value="18">
+                                        Qonliko‘l tumani
+                                    </option>
+                                    <option value="19">
+                                        Qorao‘zak tumani
+                                    </option>
+                                    <option value="20">
+                                        Qo‘ng‘irot tumani
+                                    </option>
+                                    <option value="21">
+                                        Mo‘ynoq tumani
+                                    </option>
+                                    <option value="22">
+                                        Nukus tumani
+                                    </option>
+                                    <option value="23">
+                                        Nukus shahri
+                                    </option>
+                                    <option value="24">
+                                        Taxtako‘pir tumani
+                                    </option>
+                                    <option value="25">
+                                        To‘rtko‘l tumani
+                                    </option>
+                                    <option value="26">
+                                        Xo‘jayli tumani
+                                    </option>
+                                    <option value="27">
+                                        Chimboy tumani
+                                    </option>
+                                    <option value="28">
+                                        Shumanay tumani
+                                    </option>
+                                    <option value="29">
+                                        Ellikqal‘a tumani
+                                    </option>
+                                    <option value="209">
+                                        Taxiatosh shahri
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Director</label><br>
+                                <select name="" id="">
+                                    <option value="">Kimdur</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="nameru">Nomi(ruscha)</label>
+                                <input type="text" name="" id="nameru" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address2">Mo'ljal</label>
+                                <input type="text" name="" id="address2" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="province">Viloyat</label><br>
+                                <select name="" id="province">
+                                    <option value="">Andijon</option>
+                                    <option value="">Namangan</option>
+                                    <option value="">Farg'ona</option>
+                                    <option value="">Tashkent</option>
+                                    <option value="">...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="staff">Kadr</label><br>
+                                <select name="" id="staff">
+                                    <option value="">Raisa mutalapova</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="recruter">Rekruter</label><br>
+                                <select name="" id="recruter">
+                                    <option value="">Malika Ataxanova</option>
+                                </select>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-modal-add">Yangilash</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form action="" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Filial qo'shish
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="nameuz">Nomi(o'zbekcha)</label>
+                                <input type="text" name="" id="nameuz" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Manzil</label>
+                                <input type="text" name="" id="address" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category-model">Kategoriya</label><br>
+                                <select name="" id="category-model">
+                                    <option value="">A</option>
+                                    <option value="">B</option>
+                                    <option value="">C</option>
+                                    <option value="">D</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="region">Tuman</label><br>
+                                <select name="" id="region">
+                                    <option value="15">
+                                        Amudaryo tumani
+                                    </option>
+                                    <option value="16">
+                                        Beruniy tumani
+                                    </option>
+                                    <option value="17">
+                                        Kegayli tumani
+                                    </option>
+                                    <option value="18">
+                                        Qonliko‘l tumani
+                                    </option>
+                                    <option value="19">
+                                        Qorao‘zak tumani
+                                    </option>
+                                    <option value="20">
+                                        Qo‘ng‘irot tumani
+                                    </option>
+                                    <option value="21">
+                                        Mo‘ynoq tumani
+                                    </option>
+                                    <option value="22">
+                                        Nukus tumani
+                                    </option>
+                                    <option value="23">
+                                        Nukus shahri
+                                    </option>
+                                    <option value="24">
+                                        Taxtako‘pir tumani
+                                    </option>
+                                    <option value="25">
+                                        To‘rtko‘l tumani
+                                    </option>
+                                    <option value="26">
+                                        Xo‘jayli tumani
+                                    </option>
+                                    <option value="27">
+                                        Chimboy tumani
+                                    </option>
+                                    <option value="28">
+                                        Shumanay tumani
+                                    </option>
+                                    <option value="29">
+                                        Ellikqal‘a tumani
+                                    </option>
+                                    <option value="209">
+                                        Taxiatosh shahri
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Director</label><br>
+                                <select name="" id="">
+                                    <option value="">Kimdur</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="nameru">Nomi(ruscha)</label>
+                                <input type="text" name="" id="nameru" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address2">Mo'ljal</label>
+                                <input type="text" name="" id="address2" class="form-control shadow-none" placeholder=""
+                                    aria-describedby="helpId">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="province">Viloyat</label><br>
+                                <select name="" id="province">
+                                    <option value="">Andijon</option>
+                                    <option value="">Namangan</option>
+                                    <option value="">Farg'ona</option>
+                                    <option value="">Tashkent</option>
+                                    <option value="">...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="staff">Kadr</label><br>
+                                <select name="" id="staff">
+                                    <option value="">Raisa mutalapova</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="recruter">Rekruter</label><br>
+                                <select name="" id="recruter">
+                                    <option value="">Malika Ataxanova</option>
+                                </select>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-modal-add">Qo'shish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ma'lumotlar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <section class="widget">
+                                <div class="widgetBody widget-body ">
+                                    <div class="pb-3"><label class="font-weight-bold">Nomlanishi :</label>
+                                        <h6>
+                                            Мархамат
+                                        </h6>
+                                    </div>
+                                    <div class="pb-3"><label class="font-weight-bold">Viloyat :</label>
+                                        <h6>
+                                            Andijon viloyati
+                                        </h6>
+                                    </div>
+                                    <div class="pb-3"><label class="font-weight-bold">Tuman :</label>
+                                        <h6>
+                                            Marhamat tumani
+                                        </h6>
+                                    </div>
+                                    <div class="pb-3"><label class="font-weight-bold">Direktor :</label>
+                                        <h6 class="d-flex">
+                                            Abduqodir
+                                            Abduraximov
+                                        </h6>
+                                    </div>
+                                    <div class="pb-3"><label class="font-weight-bold">Kadr :</label>
+                                        <h6 class="d-flex">
+                                            Raisa
+                                            Mutalapova
+                                        </h6>
+                                    </div>
+                                    <div class="pb-3"><label class="font-weight-bold">Rekruter :</label>
+                                        <h6 class="d-flex">
+                                            Malika
+                                            Ataxanova
+                                        </h6>
+                                    </div>
+                                    <div class="pb-3"><label class="font-weight-bold">Manzil :</label>
+                                        <h6>
+                                            Marhamat tumani
+                                        </h6>
+                                    </div>
+                                    <div class="pb-3"><label class="font-weight-bold">Mo'ljal :</label>
+                                        <h6>
+                                            Ko'xinur ro'parasida
+                                        </h6>
+                                    </div>
+                                    <div class="pb-3"><label class="font-weight-bold">Kategoriya :</label>
+                                        <h6>
+                                            B
+                                        </h6>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+        </script>
+
+</body>
+
+</html>
